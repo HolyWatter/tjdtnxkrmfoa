@@ -1,8 +1,8 @@
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Router from "./Router";
-import { QueryClient, QueryClientProvider, useQueryClient } from "react-query";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { RecoilRoot } from "recoil";
+import Router from "components/router/Router";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
