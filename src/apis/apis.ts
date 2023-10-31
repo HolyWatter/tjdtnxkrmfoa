@@ -6,7 +6,7 @@ const { REACT_APP_USER_ID } = process.env;
 
 export const blogApi = {
   getBlogInfo: async () => {
-    const res = await axiosInstance.get("/blog/35");
+    const res = await axiosInstance.get(`/blog/${REACT_APP_USER_ID}`);
 
     return res.data;
   },
@@ -20,7 +20,7 @@ export const blogApi = {
 
 export const categoryApi = {
   getUserCategory: async () => {
-    const res = await axiosInstance.get("category/35");
+    const res = await axiosInstance.get(`/category/${REACT_APP_USER_ID}`);
 
     return res.data;
   },

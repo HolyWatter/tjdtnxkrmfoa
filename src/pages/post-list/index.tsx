@@ -6,11 +6,12 @@ import { Category } from "types/category.interface";
 import { PostListType } from "types/post.interface";
 
 const PostList = () => {
+  const user = process.env.REACT_APP_USER_ID;
   const { cid } = useParams();
 
   const getPostListByCid = async () => {
-    if (!cid) return (await axiosInstance.get("/post/35")).data;
-    return (await axiosInstance.get(`/post/35/${cid}`)).data;
+    if (!cid) return (await axiosInstance.get(`/post/${user}`)).data;
+    return (await axiosInstance.get(`/post/${user}/${cid}`)).data;
   };
 
   const { data: categoryList } = useQuery<
