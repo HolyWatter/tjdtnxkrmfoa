@@ -1,11 +1,11 @@
 import { modalAtom } from "atom/modalAtom";
 import { slidePopup } from "atom/slidePopupAtom";
 import { themeAtom } from "atom/themeAtom";
-import CategoryBar from "components/category-bar";
-import Modal from "components/modal";
-import Navigation from "components/navigation";
-import Profile from "components/profile";
-import SlideInfoWindow from "components/slide-popup";
+import CategoryBar from "components/shared/category-bar";
+import Modal from "components/shared/modal";
+import Navigation from "components/shared/navigation";
+import Profile from "components/shared/profile";
+import SlideInfoWindow from "components/shared/slide-popup";
 import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { useRecoilState, useRecoilValue } from "recoil";
@@ -27,7 +27,7 @@ const Layout = () => {
       }, 4000);
       return () => clearTimeout(timeout);
     }
-  }, [isSlidePopup.isOpen]);
+  }, [isSlidePopup.isOpen, setIsSlidePopup]);
 
   useEffect(() => {
     if (!isSlidePopup.isAnimation) {
@@ -39,7 +39,7 @@ const Layout = () => {
         });
       }, 500);
     }
-  }, [isSlidePopup.isAnimation]);
+  }, [isSlidePopup.isAnimation, setIsSlidePopup]);
 
   return (
     <div className={`${isDark && "dark"} scrollbar-hide xs:relative`}>

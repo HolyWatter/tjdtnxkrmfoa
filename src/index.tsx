@@ -2,7 +2,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { RecoilRoot } from "recoil";
-import Router from "components/router/Router";
+import Router from "Router";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

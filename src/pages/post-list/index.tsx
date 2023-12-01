@@ -1,39 +1,30 @@
 import axiosInstance from "apis/axios-instance";
-import PostItemList from "components/post-item/list";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import { Category } from "types/category.interface";
-import { PostListType } from "types/post.interface";
+import { Category } from "models/category.interface";
+import { PostListType } from "models/post.interface";
+import PostItemList from "components/post-list/PostListItem";
+import useGetPost from "components/post-list/hooks/useGetPost";
 
-const PostList = () => {
-  const user = process.env.REACT_APP_USER_ID;
+const PostListPage = () => {
   const { cid } = useParams();
 
-  const getPostListByCid = async () => {
-    if (!cid) return (await axiosInstance.get(`/post/${user}`)).data;
-    return (await axiosInstance.get(`/post/${user}/${cid}`)).data;
-  };
-
-  const { data: categoryList } = useQuery<
-    PostListType & { category: Category }
-  >(["postlist", cid], getPostListByCid, {
-    staleTime: 50000,
-  });
+  const { data: postList } = useGetPost(cid);
 
   return (
     <div className="w-full">
       <div className="flex gap-3 items-center  xs:px-3">
         <p className="text-lg">
-          {categoryList?.category?.categoryName || "전체 카테고리"}
+          {postList?.category?.categoryName || "전체 카테고리"}
         </p>
-        <p className="text-xs">({categoryList?.postCount})</p>
+        <p className="text-xs">({postList?.postCount})</p>
       </div>
       <div className="mt-5 w-full">
-        {categoryList?.posts.map((item) => (
+        {postList?.posts.map((item) => (
           <PostItemList key={item.id} {...item} />
         ))}
       </div>
     </div>
   );
 };
-export default PostList;
+export default PostListPage;

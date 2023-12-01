@@ -1,32 +1,35 @@
 import { postApi } from "apis/apis";
-import UnderLineInput from "components/input/underline-input";
-import PostItemList from "components/post-item/list";
+import UnderLineInput from "components/shared/input/underline-input";
 import SearchIcon from "components/svg/search-icon";
 import useDebounce from "hooks/useDebounce";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { PostListType } from "types/post.interface";
+import { PostListType } from "models/post.interface";
+import PostItemList from "components/post-list/PostListItem";
 
-const Search = () => {
+const SearchPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchedPost, setSearchedPost] = useState<null | PostListType>(null);
   const keyword = searchParams.get("keyword");
 
-  const inputKeyword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    searchParams.set("keyword", e.target.value);
-    setSearchParams(searchParams);
-  };
+  const inputKeyword = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      searchParams.set("keyword", e.target.value);
+      setSearchParams(searchParams);
+    },
+    [searchParams, setSearchParams]
+  );
 
-  const debounceValue = useDebounce(keyword ? keyword : "", 1000);
+  const debounceValue = useDebounce(keyword ? keyword : "", 2000);
 
-  const submitSearch = async () => {
+  const submitSearch = useCallback(async () => {
     const res = await postApi.searchPost(debounceValue);
     setSearchedPost(res);
-  };
+  }, [debounceValue]);
 
   useEffect(() => {
     submitSearch();
-  }, [debounceValue]);
+  }, [submitSearch]);
 
   return (
     <div className="w-full flex flex-col items-center">
@@ -43,11 +46,11 @@ const Search = () => {
       <div className="mt-10">
         <p className="pl-5">검색결과 {searchedPost?.postCount} 건</p>
         {searchedPost?.posts.map((item) => (
-          <PostItemList {...item} />
+          <PostItemList key={item.id} {...item} />
         ))}
       </div>
     </div>
   );
 };
 
-export default Search;
+export default SearchPage;
