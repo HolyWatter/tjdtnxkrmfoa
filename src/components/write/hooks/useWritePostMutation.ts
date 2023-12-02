@@ -1,4 +1,4 @@
-import { postApi } from "apis/apis";
+import { postApi } from "apis/apis/postApi";
 import { useSlidePopup } from "hooks/useSlidePopup";
 import { PostCreate } from "models/post.interface";
 import { UseMutationOptions, useMutation } from "react-query";

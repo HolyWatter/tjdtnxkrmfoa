@@ -1,4 +1,3 @@
-import { postApi } from "apis/apis";
 import UnderLineInput from "components/shared/input/underline-input";
 import SearchIcon from "components/svg/search-icon";
 import useDebounce from "hooks/useDebounce";
@@ -6,6 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { PostListType } from "models/post.interface";
 import PostItemList from "components/post-list/PostListItem";
+import { postApi } from "apis/apis/postApi";
 
 const SearchPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();

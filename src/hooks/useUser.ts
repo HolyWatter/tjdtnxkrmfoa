@@ -1,4 +1,4 @@
-import { userApi } from "apis/apis";
+import { userApi } from "apis/apis/userApi";
 import { User } from "models/user";
 import { useQuery } from "react-query";
 

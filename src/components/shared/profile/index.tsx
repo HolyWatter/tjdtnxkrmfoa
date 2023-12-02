@@ -1,15 +1,12 @@
-import { blogApi } from "apis/apis";
-import axiosInstance from "apis/axios-instance";
-import { useQuery } from "react-query";
+import useBlogInfo from "hooks/useBlogInfo";
 
 const Profile = () => {
-  const { data: blogInfo } = useQuery("blogInfo", blogApi.getBlogInfo, {
-    staleTime: 50000,
-  });
+  const { data: blogInfo } = useBlogInfo();
 
   return (
     <div className="flex flex-col w-full px-5 py-10 border-border border-2 rounded-md gap-5 xs:flex-row xs:p-3 xs:border-b-2 xs:border-x-0 xs:border-t-0 xs:rounded-none">
       <img
+        alt=""
         src={blogInfo?.thumbnailUrl}
         className="bg-gray-500 w-[220px] h-[220px] rounded-full m-auto xs:w-1/4 xs:h-[90px] xs:max-h-[100px] xs:m-0"
       />

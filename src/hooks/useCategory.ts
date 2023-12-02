@@ -1,4 +1,4 @@
-import { categoryApi } from "apis/apis";
+import { categoryApi } from "apis/apis/categoryApi";
 import { Category } from "models/category.interface";
 import { useQuery } from "react-query";
 

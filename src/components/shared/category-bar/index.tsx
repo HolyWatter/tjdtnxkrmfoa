@@ -13,7 +13,6 @@ const CategoryBar = () => {
     return categoryList?.reduce((a: number, b: Category) => a + b.postCount, 0);
   }, [categoryList]);
 
-  console.log(categoryList);
   return (
     <>
       <div className="rounded-md border-border border-2 min-h-[300px] p-5 xs:hidden">

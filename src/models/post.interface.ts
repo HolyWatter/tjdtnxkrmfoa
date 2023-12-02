@@ -2,6 +2,8 @@ export interface PostCreate {
   title: string;
   categoryId: string;
   content: string;
+  isPinned: boolean;
+  thumbnailUrl: string;
 }
 
 export interface PostListType {
@@ -16,4 +18,6 @@ export interface Post {
   nickname: string;
   createdAt: string;
   categoryName: string;
+  isPinned: boolean;
+  thumbnailUrl: string;
 }

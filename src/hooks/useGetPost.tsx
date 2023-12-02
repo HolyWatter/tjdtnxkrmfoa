@@ -1,4 +1,4 @@
-import { postApi } from "apis/apis";
+import { postApi } from "apis/apis/postApi";
 import { Post } from "models/post.interface";
 import { useQuery } from "react-query";
 

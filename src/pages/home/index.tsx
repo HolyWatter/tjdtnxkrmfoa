@@ -1,9 +1,8 @@
+import HomeContents from "components/home/HomeContents";
+import useGetHomeData from "hooks/useGetHomeData";
+
 const Home = () => {
-  return (
-    <div className="w-full">
-      <div className="w-full max-w-full overflow-auto "></div>
-    </div>
-  );
+  return <HomeContents />;
 };
 
 export default Home;

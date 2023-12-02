@@ -50,11 +50,13 @@ const Layout = () => {
         {isSlidePopup.isOpen && <SlideInfoWindow />}
         <Navigation />
         <div className="flex max-w-[1200px] m-auto pt-[70px] gap-7 items-start xs:flex-col">
-          <div className="flex flex-col w-[270px] gap-7 xs:w-full">
+          <div className="flex flex-col w-1/4 gap-7 xs:w-full">
             <Profile />
             <CategoryBar />
           </div>
-          <Outlet />
+          <div className="w-3/4 xs:w-full px-5">
+            <Outlet />
+          </div>
         </div>
       </div>
     </div>

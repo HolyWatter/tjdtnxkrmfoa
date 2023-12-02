@@ -9,14 +9,14 @@ import ToastEditor from "./ToastEditor";
 import { Editor } from "@toast-ui/react-editor";
 
 interface Props {
-  onSubmit: (postValues: PostCreate) => void;
-  editValue?: Omit<PostCreate, "categoryId">;
+  onSubmit: (postValues: Partial<PostCreate>) => void;
+  editValue?: Omit<PostCreate, "categoryId" | "isPinned" | "thumbnailUrl">;
 }
 
 const InputPostValues = ({ onSubmit, editValue }: Props) => {
   const editorRef = useRef<Editor>(null);
   const { openModal } = useHandleModal();
-  const [postValue, inputPostValue] = useInput<Omit<PostCreate, "content">>({
+  const [postValue, inputPostValue] = useInput<Partial<PostCreate>>({
     title: editValue ? editValue.title : "",
     categoryId: "",
   });
