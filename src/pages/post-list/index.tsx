@@ -1,10 +1,6 @@
-import axiosInstance from "apis/axios-instance";
-import { useQuery } from "react-query";
-import { useParams } from "react-router-dom";
-import { Category } from "models/category.interface";
-import { PostListType } from "models/post.interface";
 import PostItemList from "components/post-list/PostListItem";
 import useGetPost from "components/post-list/hooks/useGetPost";
+import { useParams } from "react-router-dom";
 
 const PostListPage = () => {
   const { cid } = useParams();

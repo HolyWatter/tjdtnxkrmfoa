@@ -1,6 +1,5 @@
 import useEditPostMutation from "components/edit/hooks/useEditPostMutation";
 import CollectWriteEditValue from "components/shared/CollectWriteEditValue";
-import InputPostValues from "components/write/InputPostValues";
 import useGetPost from "hooks/useGetPost";
 import { useSlidePopup } from "hooks/useSlidePopup";
 import { PostCreate } from "models/post.interface";

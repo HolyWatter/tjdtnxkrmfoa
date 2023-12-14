@@ -1,8 +1,12 @@
 import HomeContents from "components/home/HomeContents";
-import useGetHomeData from "hooks/useGetHomeData";
 
 const Home = () => {
-  return <HomeContents />;
+  return (
+    <>
+      <h1>cicd 배포!!</h1>
+      <HomeContents />;
+    </>
+  );
 };
 
 export default Home;
