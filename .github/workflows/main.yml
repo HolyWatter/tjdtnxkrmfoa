@@ -20,6 +20,7 @@ jobs:
         run: |
           touch .env
           echo REACT_APP_BASE_URL=${{ secrets.REACT_APP_API }} >> .env
+          echo REACT_APP_USER_ID=${{ secrets.REACT_APP_USER_ID }} >> .env
           cat .env
       - name: Npm Install
         run: |
