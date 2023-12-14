@@ -38,7 +38,7 @@ const Navigation = () => {
     <div className="bg-white w-full shadow-md fixed top-0 z-10 dark:bg-slate-900">
       <div className="m-auto max-w-[1200px]  h-[50px] flex justify-between items-center px-10 xs:p-4">
         <Link to="/">
-          <img className="w-[100px]" src={logo} />
+          <img className="w-[100px]" src={logo} alt="" />
         </Link>
         <div className="flex gap-5 items-center relative">
           <Link to="/search?keyword=">

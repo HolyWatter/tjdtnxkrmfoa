@@ -1,9 +1,8 @@
 import { slidePopup } from "atom/slidePopupAtom";
-import { useEffect } from "react";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 
 export const useSlidePopup = () => {
-  const [isInfoWindow, setIsInfoWindow] = useRecoilState(slidePopup);
+  const setIsInfoWindow = useSetRecoilState(slidePopup);
 
   const windowOpen = (text: string) => {
     setIsInfoWindow({

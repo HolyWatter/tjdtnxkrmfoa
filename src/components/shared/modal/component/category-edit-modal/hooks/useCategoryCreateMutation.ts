@@ -1,6 +1,5 @@
 import { categoryApi } from "apis/apis/categoryApi";
-import { Category } from "models/category.interface";
-import { MutationOptions, useMutation, useQueryClient } from "react-query";
+import { useMutation, useQueryClient } from "react-query";
 
 interface Props {
   onSuccess: () => void;
@@ -16,7 +15,9 @@ const useCategoryCreateMuatation = ({ onSuccess, onError }: Props) => {
         onSuccess();
         queryClient.invalidateQueries("category");
       },
-      onError: () => {},
+      onError: () => {
+        onError();
+      },
     }
   );
 };

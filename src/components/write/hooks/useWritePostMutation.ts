@@ -1,7 +1,7 @@
 import { postApi } from "apis/apis/postApi";
 import { useSlidePopup } from "hooks/useSlidePopup";
 import { PostCreate } from "models/post.interface";
-import { UseMutationOptions, useMutation } from "react-query";
+import { useMutation } from "react-query";
 
 const useWritePostMutation = ({
   onSuccess,
@@ -19,7 +19,9 @@ const useWritePostMutation = ({
         windowOpen("게시글이 작성되었습니다.");
         onSuccess();
       },
-      onError: () => {},
+      onError: () => {
+        onError();
+      },
     }
   );
 };

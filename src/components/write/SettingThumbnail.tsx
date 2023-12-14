@@ -143,5 +143,5 @@ const sliceSrc = (content: string): string[] => {
   return content
     .split('src="')
     .slice(1)
-    .map((el) => el.split(`\"`)[0]);
+    .map((el) => el.split(`"`)[0]);
 };
