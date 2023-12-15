@@ -8,10 +8,10 @@ const HomeContents = () => {
     <div className="w-full px-3">
       <p>최근 게시물</p>
       <div className="flex flex-wrap">
-        {data.pinnedPost.length ? (
-          data.pinnedPost.map((post) => (
-            <div key={post.id} className="w-1/2 px-4">
-              <PostItemList {...post} />
+        {data.lastPost.length ? (
+          data.lastPost.map((post) => (
+            <div key={post.id} className="w-1/2">
+              <PostItemList isHome {...post} />
             </div>
           ))
         ) : (
@@ -22,10 +22,10 @@ const HomeContents = () => {
       </div>
       <p className="mt-10">고정 게시물</p>
       <div className="flex flex-wrap">
-        {data.lastPost.length ? (
-          data.lastPost.map((post) => (
-            <div key={post.id} className="w-1/2 px-4">
-              <PostItemList {...post} />
+        {data.pinnedPost.length ? (
+          data.pinnedPost.map((post) => (
+            <div key={post.id} className="w-1/2">
+              <PostItemList isHome {...post} />
             </div>
           ))
         ) : (
