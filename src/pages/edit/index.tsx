@@ -1,6 +1,6 @@
 import useEditPostMutation from "components/edit/hooks/useEditPostMutation";
 import CollectWriteEditValue from "components/shared/CollectWriteEditValue";
-import useGetPost from "hooks/useGetPost";
+import usePost from "hooks/usePost";
 import { useSlidePopup } from "hooks/useSlidePopup";
 import { PostCreate } from "models/post.interface";
 import { useCallback } from "react";
@@ -8,7 +8,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const EditPage = () => {
   const { id = "" } = useParams();
-  const { data: post } = useGetPost(id);
+  const { data: post } = usePost(id);
   const openPopup = useSlidePopup();
   const navigate = useNavigate();
 

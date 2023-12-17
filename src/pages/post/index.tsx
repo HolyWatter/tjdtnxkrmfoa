@@ -1,6 +1,6 @@
 import DeleteIcon from "components/svg/delete-icon";
 import EditIcon from "components/svg/edit-icon";
-import useGetPost from "hooks/useGetPost";
+import usePost from "hooks/usePost";
 import useUser from "hooks/useUser";
 import HTMLReactParser from "html-react-parser";
 import { Link, useParams } from "react-router-dom";
@@ -9,7 +9,7 @@ import { changeTimeFormat } from "utils/function/changeTimeFormat";
 const PostPage = () => {
   const user = useUser();
   const { id = "" } = useParams();
-  const { data: post } = useGetPost(id);
+  const { data: post, deletePost } = usePost(id);
 
   return post ? (
     <div className="w-full">
@@ -23,7 +23,10 @@ const PostPage = () => {
           >
             편집 <EditIcon />
           </Link>
-          <button className="flex items-center gap-2 px-4 py-1 border-2 rounded-md">
+          <button
+            onClick={() => deletePost(id)}
+            className="flex items-center gap-2 px-4 py-1 border-2 rounded-md"
+          >
             삭제 <DeleteIcon />
           </button>
         </div>
