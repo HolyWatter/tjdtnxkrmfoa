@@ -4,9 +4,8 @@ import useCategory from "hooks/useCategory";
 import useInput from "hooks/useInput";
 import useHandleModal from "hooks/useOpenModal";
 import { PostCreate } from "models/post.interface";
-import { useEffect, useRef, useState } from "react";
-import ToastEditor from "./ToastEditor";
-import { Editor } from "@toast-ui/react-editor";
+import { useState } from "react";
+import Editor from "./SunEditor";
 
 interface Props {
   onSubmit: (postValues: Partial<PostCreate>) => void;
@@ -14,7 +13,6 @@ interface Props {
 }
 
 const InputPostValues = ({ onSubmit, editValue }: Props) => {
-  const editorRef = useRef<Editor>(null);
   const { openModal } = useHandleModal();
   const [postValue, inputPostValue] = useInput<Partial<PostCreate>>({
     title: editValue ? editValue.title : "",
@@ -23,9 +21,7 @@ const InputPostValues = ({ onSubmit, editValue }: Props) => {
   const [content, setContent] = useState(editValue ? editValue.content : "");
   const { data: categoryList } = useCategory();
 
-  useEffect(() => {
-    if (editValue) editorRef.current?.getInstance().setHTML(editValue?.content);
-  }, [editValue]);
+  console.log(content);
 
   return (
     <div className="flex flex-col">
@@ -60,7 +56,7 @@ const InputPostValues = ({ onSubmit, editValue }: Props) => {
         </div>
       </div>
       <div className="mt-10 w-full overflow-hidden xs-3 m-auto flex justify-center">
-        <ToastEditor editorRef={editorRef} setContent={setContent} />
+        <Editor setContent={setContent} />
       </div>
       <div className="flex gap-3 mt-5 justify-end ">
         <button>취소</button>

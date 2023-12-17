@@ -5,12 +5,12 @@ const HomeContents = () => {
   const { data } = useGetHomeData();
 
   return data ? (
-    <div className="w-full px-3">
+    <div className="w-full">
       <p>최근 게시물</p>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap justify-between">
         {data.lastPost.length ? (
           data.lastPost.map((post) => (
-            <div key={post.id} className="w-1/2">
+            <div key={post.id} className="w-[48%]">
               <PostItemList isHome {...post} />
             </div>
           ))
@@ -24,7 +24,7 @@ const HomeContents = () => {
       <div className="flex flex-wrap">
         {data.pinnedPost.length ? (
           data.pinnedPost.map((post) => (
-            <div key={post.id} className="w-1/2">
+            <div key={post.id} className="w-4/9">
               <PostItemList isHome {...post} />
             </div>
           ))
