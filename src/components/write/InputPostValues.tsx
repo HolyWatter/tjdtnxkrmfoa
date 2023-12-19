@@ -1,4 +1,4 @@
-import UnderLineInput from "components/shared/input/underline-input";
+import UnderLineInput from "components/shared/input/UnderlineInput";
 import CategoryEditModal from "components/shared/modal/component/category-edit-modal";
 import useCategory from "hooks/useCategory";
 import useInput from "hooks/useInput";
@@ -18,10 +18,8 @@ const InputPostValues = ({ onSubmit, editValue }: Props) => {
     title: editValue ? editValue.title : "",
     categoryId: "",
   });
-  const [content, setContent] = useState(editValue ? editValue.content : "");
+  const [content, setContent] = useState("");
   const { data: categoryList } = useCategory();
-
-  console.log(content);
 
   return (
     <div className="flex flex-col">
@@ -56,7 +54,7 @@ const InputPostValues = ({ onSubmit, editValue }: Props) => {
         </div>
       </div>
       <div className="mt-10 w-full overflow-hidden xs-3 m-auto flex justify-center">
-        <Editor setContent={setContent} />
+        <Editor setContent={setContent} editValue={editValue} />
       </div>
       <div className="flex gap-3 mt-5 justify-end ">
         <button>취소</button>

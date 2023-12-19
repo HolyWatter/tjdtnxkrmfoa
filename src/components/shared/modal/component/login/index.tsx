@@ -1,5 +1,5 @@
 import axiosInstance from "apis/axios-instance";
-import Input from "components/shared/input/default-input";
+import Input from "components/shared/input/DefaultInput";
 import useInput from "hooks/useInput";
 import useHandleModal from "hooks/useOpenModal";
 import { useSlidePopup } from "hooks/useSlidePopup";

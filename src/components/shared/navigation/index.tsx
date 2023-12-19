@@ -9,7 +9,7 @@ import useHandleModal from "hooks/useOpenModal";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
-import MenuBar from "./menu-bar";
+import MenuBar from "./MenuBar";
 import useToggle from "hooks/useToggle";
 import SearchIcon from "components/svg/search-icon";
 

@@ -1,5 +1,5 @@
-import Input from "components/shared/input/default-input";
-import TextArea from "components/shared/input/default-textarea";
+import Input from "components/shared/input/DefaultInput";
+import TextArea from "components/shared/input/DefaultTextarea";
 import useHandleModal from "hooks/useOpenModal";
 import { UpdateBlogInfo } from "models/blog.interface";
 import { useCallback, useState } from "react";

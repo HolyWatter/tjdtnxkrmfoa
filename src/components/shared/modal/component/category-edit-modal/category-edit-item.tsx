@@ -1,4 +1,4 @@
-import Input from "components/shared/input/default-input";
+import Input from "components/shared/input/DefaultInput";
 import DeleteIcon from "components/svg/delete-icon";
 import EditIcon from "components/svg/edit-icon";
 import { useSlidePopup } from "hooks/useSlidePopup";

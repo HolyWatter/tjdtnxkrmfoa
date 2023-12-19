@@ -14,7 +14,6 @@ const CollectWriteEditValue = ({ editValues, onSubmit }: Props) => {
 
   useEffect(() => {
     if (step !== 2) return;
-    console.log(postValues);
     onSubmit(postValues as PostCreate);
   }, [step, onSubmit, postValues]);
 

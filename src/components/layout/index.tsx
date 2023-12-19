@@ -1,11 +1,11 @@
 import { modalAtom } from "atom/modalAtom";
 import { slidePopup } from "atom/slidePopupAtom";
 import { themeAtom } from "atom/themeAtom";
-import CategoryBar from "components/shared/category-bar";
+import Profile from "components/shared";
+import CategoryBar from "components/shared/CategoryBar";
 import Modal from "components/shared/modal";
 import Navigation from "components/shared/navigation";
-import Profile from "components/shared/profile";
-import SlideInfoWindow from "components/shared/slide-popup";
+import SlideInfoWindow from "components/shared/SlidePopup";
 import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { useRecoilState, useRecoilValue } from "recoil";

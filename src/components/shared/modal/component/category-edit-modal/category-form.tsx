@@ -1,4 +1,4 @@
-import Input from "components/shared/input/default-input";
+import Input from "components/shared/input/DefaultInput";
 import { useState } from "react";
 
 interface Props {

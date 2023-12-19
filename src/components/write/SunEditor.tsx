@@ -1,17 +1,26 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import SunEditor from "suneditor-react";
 import SunEditorCore from "suneditor/src/lib/core";
 
 import { UploadBeforeHandler } from "suneditor-react/dist/types/upload";
 import "suneditor/dist/css/suneditor.min.css";
 import uploadImgFunction from "utils/function/uploadImg";
+import { PostCreate } from "models/post.interface";
 
 interface Props {
   setContent: React.Dispatch<React.SetStateAction<string>>;
+  editValue?: Omit<PostCreate, "categoryId" | "isPinned" | "thumbnailUrl">;
 }
 
-const Editor = ({ setContent }: Props) => {
+const Editor = ({ setContent, editValue }: Props) => {
   const editor = useRef<SunEditorCore>();
+  console.log(editValue?.content);
+  useEffect(() => {
+    if (!editor.current) return;
+    if (editValue) {
+      editor.current?.setContents(editValue.content);
+    }
+  }, [editValue, editor]);
 
   const getSunEditorInstance = (SunEditor: SunEditorCore) => {
     editor.current = SunEditor;
