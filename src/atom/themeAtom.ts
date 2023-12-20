@@ -3,6 +3,6 @@ import { atom } from "recoil";
 export const themeAtom = atom({
   key: "themeAtom",
   default: {
-    isDark: false,
+    isDark: localStorage.getItem("theme") === "light" ? false : true,
   },
 });

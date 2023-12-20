@@ -15,7 +15,7 @@ const HomeContents = () => {
             </div>
           ))
         ) : (
-          <p className="w-full text-black/50 text-center py-5">
+          <p className="w-full text-black/50 text-center py-5 dark:text-white">
             최근 게시글이 없습니다.
           </p>
         )}
@@ -29,7 +29,7 @@ const HomeContents = () => {
             </div>
           ))
         ) : (
-          <p className="w-full text-black/50 text-center py-5">
+          <p className="w-full text-black/50 text-center py-5 dark:text-white">
             고정된 게시글이 없습니다.
           </p>
         )}

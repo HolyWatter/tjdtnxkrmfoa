@@ -1,38 +1,24 @@
-import axiosInstance from "apis/axios-instance";
 import logo from "assets/image/logo/logo.png";
 import { themeAtom } from "atom/themeAtom";
 import Login from "components/shared/modal/component/login";
 import MenuIcon from "components/svg/menu-icon";
 import MoonIcon from "components/svg/moon";
+import SearchIcon from "components/svg/search-icon";
 import SunIcon from "components/svg/sun";
 import useHandleModal from "hooks/useOpenModal";
-import { useQuery } from "react-query";
-import { Link } from "react-router-dom";
-import { useRecoilState } from "recoil";
-import MenuBar from "./MenuBar";
+import useTheme from "hooks/useTheme";
 import useToggle from "hooks/useToggle";
-import SearchIcon from "components/svg/search-icon";
+import useUser from "hooks/useUser";
+import { Link } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import MenuBar from "./MenuBar";
 
 const Navigation = () => {
   const [isMenubar, handleMenubar] = useToggle();
-
-  const getUser = async () => {
-    const res = await axiosInstance.get("/users");
-    return res.data;
-  };
-  const { data: currentUser } = useQuery("currentUser", getUser, {
-    staleTime: 60000,
-    retry: 1,
-  });
-
   const { openModal } = useHandleModal();
-  const [theme, setTheme] = useRecoilState(themeAtom);
-
-  const toggleTheme = () => {
-    setTheme({
-      isDark: !theme.isDark,
-    });
-  };
+  const theme = useRecoilValue(themeAtom);
+  const toggleTheme = useTheme();
+  const user = useUser();
 
   return (
     <div className="bg-white w-full shadow-md fixed top-0 z-10 dark:bg-slate-900">
@@ -47,7 +33,7 @@ const Navigation = () => {
           <button onClick={toggleTheme}>
             {theme.isDark ? <SunIcon /> : <MoonIcon />}
           </button>
-          {currentUser ? (
+          {user ? (
             <button onClick={handleMenubar}>
               <MenuIcon />
             </button>
