@@ -10,7 +10,7 @@ const HomeContents = () => {
       <div className="flex flex-wrap justify-between">
         {data.lastPost.length ? (
           data.lastPost.map((post) => (
-            <div key={post.id} className="w-[48%]">
+            <div key={post.id} className="w-[48%] xs:w-[90%]">
               <PostItemList isHome {...post} />
             </div>
           ))
@@ -24,7 +24,7 @@ const HomeContents = () => {
       <div className="flex flex-wrap">
         {data.pinnedPost.length ? (
           data.pinnedPost.map((post) => (
-            <div key={post.id} className="w-4/9">
+            <div key={post.id} className="w-[48%] xs:w-[90%]">
               <PostItemList isHome {...post} />
             </div>
           ))

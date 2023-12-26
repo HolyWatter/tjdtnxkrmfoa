@@ -34,7 +34,7 @@ const PostItemList = ({
 
       <div className="w-4/5 flex flex-col justify-between xs:w-3/5">
         <div>
-          <p className="text-lg">{title}</p>
+          <p className="text-lg xs:text-sm">{title}</p>
           {!isHome && (
             <p
               className="h-[50px] text-ellipsis overflow-hidden xs:h-[30px]"
@@ -43,8 +43,10 @@ const PostItemList = ({
           )}
         </div>
         <div className="flex justify-end items-end gap-5 xs:flex-col xs:gap-1">
-          <p className="whitespace-nowrap">{nickname}</p>
-          <p className="text-xs text-gray-400">{changeTimeFormat(createdAt)}</p>
+          <p className="whitespace-nowrap xs:text-sm">{nickname}</p>
+          <p className="text-xs text-gray-400 xs:text-xs">
+            {changeTimeFormat(createdAt)}
+          </p>
         </div>
       </div>
     </Link>
