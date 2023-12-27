@@ -6,6 +6,7 @@ import useUser from "hooks/useUser";
 import HTMLReactParser from "html-react-parser";
 import { Link, useParams } from "react-router-dom";
 import { changeTimeFormat } from "utils/function/changeTimeFormat";
+import { removeHtmlTags } from "utils/function/removeHTMLTag";
 
 const PostPage = () => {
   const user = useUser();
@@ -17,9 +18,13 @@ const PostPage = () => {
   const { categoryName, title, createdAt, content, nickname, thumbnailUrl } =
     post;
 
-  return post ? (
+  return (
     <>
-      <SEO image={thumbnailUrl} title="성수로그" description={title} />
+      <SEO
+        image={thumbnailUrl}
+        title={`성수로그 - ${title}`}
+        description={removeHtmlTags(content).slice(0, 80)}
+      />
       <div className="w-full">
         <p className="text-sm">{categoryName}</p>
         <h1 className="text-xl mt-3">{title}</h1>
@@ -43,10 +48,10 @@ const PostPage = () => {
           <p>{nickname}</p>·
           <p className=" text-gray-500">{changeTimeFormat(createdAt)}</p>
         </div>
-        <div className="mt-20 px-10">{HTMLReactParser(content)}</div>
+        <div className="mt-20 px-10 xs:px-0">{HTMLReactParser(content)}</div>
       </div>
     </>
-  ) : null;
+  );
 };
 
 export default PostPage;
