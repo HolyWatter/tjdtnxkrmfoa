@@ -1,6 +1,6 @@
 import Input from "components/shared/input/DefaultInput";
 import TextArea from "components/shared/input/DefaultTextarea";
-import useHandleModal from "hooks/useOpenModal";
+import { useModalContext } from "context/ModalContext";
 import { UpdateBlogInfo } from "models/blog.interface";
 import { useCallback, useState } from "react";
 import uploadImgFunction from "utils/function/uploadImg";
@@ -27,7 +27,7 @@ const ProfileEditForm = ({
     thumbnailUrl,
   });
 
-  const { closeModal } = useHandleModal();
+  const { closeModal } = useModalContext();
 
   const uploadImg = useCallback(
     async (e: React.ChangeEvent<HTMLInputElement>) => {

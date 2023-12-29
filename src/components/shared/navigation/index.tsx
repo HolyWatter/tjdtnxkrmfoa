@@ -5,7 +5,7 @@ import MenuIcon from "components/svg/menu-icon";
 import MoonIcon from "components/svg/moon";
 import SearchIcon from "components/svg/search-icon";
 import SunIcon from "components/svg/sun";
-import useHandleModal from "hooks/useOpenModal";
+import { useModalContext } from "context/ModalContext";
 import useTheme from "hooks/useTheme";
 import useToggle from "hooks/useToggle";
 import useUser from "hooks/useUser";
@@ -15,7 +15,7 @@ import MenuBar from "./MenuBar";
 
 const Navigation = () => {
   const [isMenubar, handleMenubar] = useToggle();
-  const { openModal } = useHandleModal();
+  const { openModal } = useModalContext();
   const theme = useRecoilValue(themeAtom);
   const toggleTheme = useTheme();
   const user = useUser();

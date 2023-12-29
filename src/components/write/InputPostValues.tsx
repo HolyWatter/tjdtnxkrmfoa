@@ -2,10 +2,10 @@ import UnderLineInput from "components/shared/input/UnderlineInput";
 import CategoryEditModal from "components/shared/modal/component/category-edit-modal";
 import useCategory from "hooks/useCategory";
 import useInput from "hooks/useInput";
-import useHandleModal from "hooks/useOpenModal";
 import { PostCreate } from "models/post.interface";
 import { useState } from "react";
 import Editor from "./SunEditor";
+import { useModalContext } from "context/ModalContext";
 
 interface Props {
   onSubmit: (postValues: Partial<PostCreate>) => void;
@@ -13,7 +13,7 @@ interface Props {
 }
 
 const InputPostValues = ({ onSubmit, editValue }: Props) => {
-  const { openModal } = useHandleModal();
+  const { openModal } = useModalContext();
   const [postValue, inputPostValue] = useInput<Partial<PostCreate>>({
     title: editValue ? editValue.title : "",
     categoryId: "",

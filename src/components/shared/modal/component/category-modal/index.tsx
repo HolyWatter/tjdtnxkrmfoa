@@ -1,15 +1,15 @@
-import useHandleModal from "hooks/useOpenModal";
 import { Link } from "react-router-dom";
 import { Category } from "models/category.interface";
+import { useModalContext } from "context/ModalContext";
 
 interface Props {
   categoryList: Category[];
 }
 
 const CategoryModal = ({ categoryList }: Props) => {
-  const { closeModal } = useHandleModal();
+  const { closeModal } = useModalContext();
   return (
-    <div className="">
+    <div className="dark:text-white">
       <p className="py-3 border-b-2 text-center">카테고리</p>
       <div className="py-7 flex flex-col gap-3">
         <Link to="/list" className="text-center" onClick={closeModal}>

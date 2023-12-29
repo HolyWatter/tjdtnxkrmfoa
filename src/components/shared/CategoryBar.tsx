@@ -1,12 +1,12 @@
 import CategoryModal from "components/shared/modal/component/category-modal";
+import { useModalContext } from "context/ModalContext";
 import useCategory from "hooks/useCategory";
-import useHandleModal from "hooks/useOpenModal";
 import { Category } from "models/category.interface";
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 
 const CategoryBar = () => {
-  const { openModal } = useHandleModal();
+  const { openModal } = useModalContext();
   const { data: categoryList } = useCategory();
 
   const totalCount = useMemo(() => {

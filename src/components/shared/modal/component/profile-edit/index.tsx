@@ -4,11 +4,11 @@ import useProfileMutation from "./hooks/useProfileMutation";
 import { useSlidePopup } from "hooks/useSlidePopup";
 import { UpdateBlogInfo } from "models/blog.interface";
 import { useCallback } from "react";
-import useHandleModal from "hooks/useOpenModal";
+import { useModalContext } from "context/ModalContext";
 
 const ProfileEdit = () => {
   const { data: blogInfo } = useBlogInfo();
-  const { closeModal } = useHandleModal();
+  const { closeModal } = useModalContext();
   const openPopup = useSlidePopup();
 
   const { mutate } = useProfileMutation({

@@ -1,18 +1,15 @@
-import { modalAtom } from "atom/modalAtom";
 import { slidePopup } from "atom/slidePopupAtom";
 import { themeAtom } from "atom/themeAtom";
 import Profile from "components/shared";
 import CategoryBar from "components/shared/CategoryBar";
-import Modal from "components/shared/modal";
+import SlidePopup from "components/shared/SlidePopup";
 import Navigation from "components/shared/navigation";
-import SlideInfoWindow from "components/shared/SlidePopup";
 import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { useRecoilState, useRecoilValue } from "recoil";
 
 const Layout = () => {
   const { isDark } = useRecoilValue(themeAtom);
-  const { isOpen } = useRecoilValue(modalAtom);
   const [isSlidePopup, setIsSlidePopup] = useRecoilState(slidePopup);
 
   useEffect(() => {
@@ -46,8 +43,7 @@ const Layout = () => {
       <div
         className={`scrollbar-hide min-h-screen h-screen m-auto bg-bg overflow-auto font-orbit dark:bg-gray-800 dark:text-white pb-20`}
       >
-        {isOpen && <Modal />}
-        {isSlidePopup.isOpen && <SlideInfoWindow />}
+        {isSlidePopup.isOpen && <SlidePopup />}
         <Navigation />
         <div className="flex max-w-[1200px] m-auto pt-[70px] gap-7 items-start xs:flex-col">
           <div className="flex flex-col w-1/4 gap-7 xs:w-full">

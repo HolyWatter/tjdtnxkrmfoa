@@ -1,15 +1,15 @@
 import CloseIcon from "components/svg/close-icon";
 import useCategory from "hooks/useCategory";
-import useHandleModal from "hooks/useOpenModal";
 import { useSlidePopup } from "hooks/useSlidePopup";
 import { useCallback } from "react";
 import CategoryEditItem from "./category-edit-item";
 import useCategoryCreateMuatation from "./hooks/useCategoryCreateMutation";
 import CategoryForm from "./category-form";
+import { useModalContext } from "context/ModalContext";
 
 export const CategoryEditModal = () => {
   const openPopup = useSlidePopup();
-  const { closeModal } = useHandleModal();
+  const { closeModal } = useModalContext();
   const { data: categoryList } = useCategory();
 
   const { mutate: createMutate } = useCategoryCreateMuatation({

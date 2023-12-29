@@ -1,16 +1,21 @@
-import { modalAtom } from "atom/modalAtom";
-import ModalBackGround from "./background";
 import { useRecoilValue } from "recoil";
+import ModalBackGround from "./background";
+import { themeAtom } from "atom/themeAtom";
 
-const Modal = () => {
-  const { component } = useRecoilValue(modalAtom);
+interface Props {
+  children: React.ReactNode;
+}
+
+const Modal = ({ children }: Props) => {
+  const { isDark } = useRecoilValue(themeAtom);
+
   return (
-    <ModalBackGround>
+    <ModalBackGround isDark={isDark}>
       <div
         onClick={(e) => e.stopPropagation()}
         className="bg-white w-[500px]  rounded-md shadow-md z-10 dark:bg-slate-900"
       >
-        {component}
+        {children}
       </div>
     </ModalBackGround>
   );

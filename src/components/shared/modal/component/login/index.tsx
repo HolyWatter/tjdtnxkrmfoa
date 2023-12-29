@@ -1,7 +1,7 @@
 import axiosInstance from "apis/axios-instance";
 import Input from "components/shared/input/DefaultInput";
+import { useModalContext } from "context/ModalContext";
 import useInput from "hooks/useInput";
-import useHandleModal from "hooks/useOpenModal";
 import { useSlidePopup } from "hooks/useSlidePopup";
 import Cookies from "js-cookie";
 import { useQueryClient } from "react-query";
@@ -9,7 +9,7 @@ import { useQueryClient } from "react-query";
 const Login = () => {
   const queryClient = useQueryClient();
   const openPopup = useSlidePopup();
-  const { closeModal } = useHandleModal();
+  const { closeModal } = useModalContext();
   const [loginValue, inputLoginValue] = useInput<LoginValue>({
     email: "",
     password: "",
@@ -32,7 +32,7 @@ const Login = () => {
       onSubmit={submitLoginForm}
       className="flex flex-col gap-5 px-7 py-16 xs:py-10"
     >
-      <p className="text-center mb-10 text-3xl">로그인</p>
+      <p className="text-center mb-10 text-3xl dark:text-white">로그인</p>
       <Input
         type="email"
         name="email"

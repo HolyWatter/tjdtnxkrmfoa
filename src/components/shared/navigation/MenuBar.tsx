@@ -1,5 +1,5 @@
 import ProfileEdit from "components/shared/modal/component/profile-edit";
-import useHandleModal from "hooks/useOpenModal";
+import { useModalContext } from "context/ModalContext";
 import { Link } from "react-router-dom";
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
 }
 
 const MenuBar = ({ handleMenubar }: Props) => {
-  const { openModal } = useHandleModal();
+  const { openModal } = useModalContext();
   return (
     <>
       <div className="w-[260px] absolute top-10 bg-white rounded-lg shadow-lg py-3 right-[-30px] dark:bg-slate-900 z-10">
