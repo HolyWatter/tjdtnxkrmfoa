@@ -1,6 +1,6 @@
 import { slidePopup } from "atom/slidePopupAtom";
 import { themeAtom } from "atom/themeAtom";
-import Profile from "components/shared";
+import Profile from "components/shared/Profile";
 import CategoryBar from "components/shared/CategoryBar";
 import SlidePopup from "components/shared/SlidePopup";
 import Navigation from "components/shared/navigation";
