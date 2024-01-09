@@ -41,7 +41,7 @@ const Layout = () => {
   return (
     <div className={`${isDark && "dark"} scrollbar-hide xs:relative`}>
       <div
-        className={`scrollbar-hide min-h-screen h-screen m-auto bg-bg overflow-auto font-orbit dark:bg-gray-800 dark:text-white pb-20`}
+        className={`scrollbar-hide min-h-screen h-screen m-auto bg-bg overflow-auto font-kartrider dark:bg-gray-800 dark:text-white pb-20`}
       >
         {isSlidePopup.isOpen && <SlidePopup />}
         <Navigation />

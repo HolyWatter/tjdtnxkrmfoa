@@ -3,14 +3,25 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Orbit-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/Orbit-Regular.woff2")
+  font-family: "KartriderMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/KartriderMedium.woff2")
     format("woff2");
+  font-weight: 500;
+  font-style: normal;
 }
 
-@media (max-width: 800px) {
-  .toastui-editor-defaultUI-toolbar {
-    max-width: 100%;
-    overflow-x: scroll;
-  }
+@font-face {
+  font-family: "KartriderBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/KartriderBold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "KartriderExtraBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/KartriderExtraBold.woff2")
+    format("woff2");
+  font-weight: 800;
+  font-style: normal;
 }

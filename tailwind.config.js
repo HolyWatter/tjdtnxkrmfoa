@@ -13,7 +13,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        orbit: "Orbit-Regular",
+        kartrider: "KartriderMedium",
+        bold: "KartriderBold",
+        extraBold: "KartriderExtraBold",
       },
       colors: {
         bg: "#f8f9fd",
