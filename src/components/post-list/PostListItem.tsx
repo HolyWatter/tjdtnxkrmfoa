@@ -32,7 +32,7 @@ const PostItemList = ({
         <div className="w-[130px] h-[130px] bg-gray-400 rounded-md xs:w-[100px] xs:h-[100px]" />
       )}
 
-      <div className="w-4/5 flex flex-col justify-between xs:w-3/5">
+      <div className="w-4/5 flex flex-col justify-between xs:w-full">
         <div>
           <p className="text-lg xs:text-sm">{title}</p>
           {!isHome && (
