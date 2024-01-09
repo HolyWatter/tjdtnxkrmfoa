@@ -25,3 +25,9 @@
   font-weight: 800;
   font-style: normal;
 }
+
+.contents-container pre,
+.contents-container figure {
+  max-width: 100%;
+  overflow: auto;
+}

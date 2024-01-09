@@ -48,7 +48,9 @@ const PostPage = () => {
           <p>{nickname}</p>·
           <p className=" text-gray-500">{changeTimeFormat(createdAt)}</p>
         </div>
-        <div className="mt-20 px-10 xs:px-0">{HTMLReactParser(content)}</div>
+        <div className="mt-20 px-10 xs:px-0 contents-container">
+          {HTMLReactParser(content)}
+        </div>
       </div>
     </>
   );
