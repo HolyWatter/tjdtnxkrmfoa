@@ -12,7 +12,7 @@ function SEO({ title, description, image }: Props) {
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="성수로그" />
+      <meta property="og:title" content={title} />
       <meta property="og:image" content={image} />
       <meta property="og:image:width:" content="260" />
       <meta property="og:image:height" content="260" />
