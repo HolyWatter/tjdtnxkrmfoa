@@ -35,12 +35,12 @@ const PostItemList = ({
       <div className="w-4/5 flex flex-col justify-between xs:w-full">
         <div>
           <p className="text-lg xs:text-sm">{title}</p>
-          {!isHome && (
+          {/* {!isHome && (
             <p
               className="h-[50px] text-ellipsis overflow-hidden xs:h-[30px]"
               dangerouslySetInnerHTML={{ __html: content.slice(0, 80) }}
             />
-          )}
+          )} */}
         </div>
         <div className="flex justify-end items-end gap-5 xs:flex-col xs:gap-1">
           <p className="whitespace-nowrap xs:text-sm">{nickname}</p>
