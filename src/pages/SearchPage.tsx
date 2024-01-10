@@ -1,4 +1,4 @@
-import PostItemList from "components/post-list/PostListItem";
+import PostItemList from "components/shared/PostListItem";
 import SearchForm from "components/search/SearchForm";
 import useSearch from "components/search/hooks/useSearch";
 import { useState } from "react";

@@ -1,11 +1,11 @@
-import PostItemList from "components/post-list/PostListItem";
-import useGetPost from "components/post-list/hooks/useGetPost";
+import PostItemList from "components/shared/PostListItem";
+import useGetPostList from "hooks/usePostList";
 import { useParams } from "react-router-dom";
 
 const PostListPage = () => {
   const { cid } = useParams();
 
-  const { data: postList } = useGetPost(cid);
+  const { data: postList } = useGetPostList(cid);
 
   return (
     <div className="w-full">

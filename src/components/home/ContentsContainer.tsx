@@ -1,4 +1,4 @@
-import PostItemList from "components/post-list/PostListItem";
+import PostItemList from "components/shared/PostListItem";
 import { Post } from "models/post.interface";
 
 interface Props {

@@ -1,17 +1,13 @@
+import Post from "components/post";
+import CommentForm from "components/post/CommentForm";
 import SEO from "components/shared/SEO";
-import DeleteIcon from "components/svg/delete-icon";
-import EditIcon from "components/svg/edit-icon";
 import usePost from "hooks/usePost";
-import useUser from "hooks/useUser";
-import HTMLReactParser from "html-react-parser";
-import { Link, useParams } from "react-router-dom";
-import { changeTimeFormat } from "utils/function/changeTimeFormat";
+import { useParams } from "react-router-dom";
 import { removeHtmlTags } from "utils/function/removeHTMLTag";
 
 const PostPage = () => {
-  const user = useUser();
   const { id = "" } = useParams();
-  const { data: post, deletePost } = usePost(id);
+  const { data: post } = usePost(id);
 
   if (post == null) return null;
 
@@ -25,33 +21,15 @@ const PostPage = () => {
         title={`성수로그 - ${title}`}
         description={removeHtmlTags(content).slice(0, 80)}
       />
-      <div className="w-full">
-        <p className="text-sm">{categoryName}</p>
-        <h1 className="text-xl mt-3">{title}</h1>
-        {user && (
-          <div className="flex justify-end gap-3">
-            <Link
-              to={`/edit/${id}`}
-              className="flex items-center gap-2 px-4 py-1 border-2 rounded-md"
-            >
-              편집 <EditIcon />
-            </Link>
-            <button
-              onClick={() => deletePost(id)}
-              className="flex items-center gap-2 px-4 py-1 border-2 rounded-md"
-            >
-              삭제 <DeleteIcon />
-            </button>
-          </div>
-        )}
-        <div className="w-full mt-5 flex gap-2 justify-end items-end">
-          <p>{nickname}</p>·
-          <p className=" text-gray-500">{changeTimeFormat(createdAt)}</p>
-        </div>
-        <div className="mt-20 px-10 xs:px-0 contents-container">
-          {HTMLReactParser(content)}
-        </div>
-      </div>
+      <Post
+        id={id}
+        categoryName={categoryName}
+        nickname={nickname}
+        createdAt={createdAt}
+        title={title}
+        content={content}
+      />
+      <CommentForm />
     </>
   );
 };

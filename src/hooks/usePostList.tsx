@@ -3,7 +3,7 @@ import { Category } from "models/category.interface";
 import { PostListType } from "models/post.interface";
 import { useQuery } from "react-query";
 
-const useGetPost = (cid: string | undefined) => {
+const useGetPostList = (cid: string | undefined) => {
   return useQuery<PostListType & { category: Category }>(
     ["postlist", cid],
     () => postApi.getPostListByCid(cid),
@@ -13,4 +13,4 @@ const useGetPost = (cid: string | undefined) => {
   );
 };
 
-export default useGetPost;
+export default useGetPostList;
