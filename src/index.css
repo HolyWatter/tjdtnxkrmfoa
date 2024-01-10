@@ -26,7 +26,12 @@
   font-style: normal;
 }
 
-.contents-container pre,
+.contents-container pre {
+  max-width: 100%;
+  overflow: auto;
+  background-color: #123;
+  padding: 16px;
+}
 .contents-container figure {
   max-width: 100%;
   overflow: auto;
