@@ -17,6 +17,8 @@ const useUser = (): User | null => {
 
   if (isError) return null;
 
+  if (data == null) return null;
+
   return data[0];
 };
 

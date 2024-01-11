@@ -6,16 +6,16 @@ const Profile = () => {
 
   return (
     <div className="flex flex-col w-full px-5 py-10 border-border border-2 rounded-md gap-5 xs:flex-row xs:p-3 xs:border-b-2 xs:border-x-0 xs:border-t-0 xs:rounded-none">
-      <div className="relative">
+      <div className="relative xs:w-1/4 w-[220px] ">
         <img
           alt=""
           src={blogInfo?.thumbnailUrl}
-          className="bg-gray-500 w-[220px] h-[220px] rounded-full m-auto xs:w-1/4 xs:h-[90px] xs:max-h-[100px] xs:m-0"
+          className="bg-gray-500 rounded-full m-auto  xs:m-0 w-full h-[220px] xs:max-h-[100px] xs:h-[90px]"
         />
         <a
           href="https://github.com/HolyWatter"
           target="_blank"
-          className="absolute bottom-[-5px] right-5"
+          className="absolute bottom-[-5px] right-5 xs:right-0 xs:bottom-0"
           rel="noreferrer"
         >
           <GithubIcon />

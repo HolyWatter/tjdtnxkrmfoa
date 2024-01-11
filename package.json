@@ -19,6 +19,7 @@
     "react-query": "^3.39.3",
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
+    "react-snap": "^1.23.0",
     "recoil": "^0.7.7",
     "suneditor": "^2.45.1",
     "suneditor-react": "^3.6.1",
@@ -29,6 +30,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -36,6 +38,16 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "reactSnap": {
+    "include": [
+      "/",
+      "/post"
+    ],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
     ]
   },
   "browserslist": {

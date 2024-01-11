@@ -2,8 +2,7 @@ const GithubIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="50"
-      height="50"
+      className="w-[50px] h-[50px]  xs:w-8 xs-h-8"
       focusable="false"
       viewBox="0 0 12 12"
     >

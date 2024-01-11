@@ -7,12 +7,25 @@ import "./index.css";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+const $root = document.getElementById("root");
 
 const queryClient = new QueryClient();
-root.render(
-  <QueryClientProvider client={queryClient}>
-    <RecoilRoot>
-      <Router />
-    </RecoilRoot>
-  </QueryClientProvider>
-);
+
+if ($root?.hasChildNodes()) {
+  ReactDOM.hydrateRoot(
+    $root,
+    <QueryClientProvider client={queryClient}>
+      <RecoilRoot>
+        <Router />
+      </RecoilRoot>
+    </QueryClientProvider>
+  );
+} else {
+  root.render(
+    <QueryClientProvider client={queryClient}>
+      <RecoilRoot>
+        <Router />
+      </RecoilRoot>
+    </QueryClientProvider>
+  );
+}
