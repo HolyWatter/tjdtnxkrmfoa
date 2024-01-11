@@ -1,5 +1,6 @@
 import Post from "components/post";
 import CommentForm from "components/post/CommentForm";
+import CommentList from "components/post/CommentList";
 import SEO from "components/shared/SEO";
 import usePost from "hooks/usePost";
 import { useParams } from "react-router-dom";
@@ -29,7 +30,9 @@ const PostPage = () => {
         title={title}
         content={content}
       />
-      <CommentForm />
+      <CommentForm id={id} />
+      <div className="h-10" />
+      <CommentList id={id} />
     </>
   );
 };

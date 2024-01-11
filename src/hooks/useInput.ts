@@ -1,15 +1,22 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 const useInput = <T>(
   initialState: T
 ): [
   T,
-  (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void
+  (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => void,
+  () => void
 ] => {
   const [value, setValue] = useState(initialState);
 
   const onChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     setValue({
       ...value,
@@ -17,7 +24,11 @@ const useInput = <T>(
     });
   };
 
-  return [value, onChange];
+  const initialize = useCallback(() => {
+    setValue(initialState);
+  }, [setValue, initialState]);
+
+  return [value, onChange, initialize];
 };
 
 export default useInput;

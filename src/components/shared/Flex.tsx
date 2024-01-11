@@ -10,6 +10,7 @@ interface Props {
     | "";
   align?: "items-start" | "items-end" | "items-center" | "";
   children: React.ReactNode;
+  gap?: number;
 }
 
 const Flex = ({
@@ -17,9 +18,12 @@ const Flex = ({
   direction = "flex-row",
   justify = "",
   align = "",
+  gap,
 }: Props) => {
   return (
-    <div className={`flex ${direction} ${justify} ${align}`}>{children}</div>
+    <div className={`flex w-full ${direction} ${justify} ${align} gap-${gap}`}>
+      {children}
+    </div>
   );
 };
 

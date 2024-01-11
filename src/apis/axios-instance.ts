@@ -1,8 +1,12 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
+const isDevelop = process.env.NODE_ENV === "development";
+
 const axiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_BASE_URL,
+  baseURL: isDevelop
+    ? process.env.REACT_APP_BASE_URL_DEV
+    : process.env.REACT_APP_BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },

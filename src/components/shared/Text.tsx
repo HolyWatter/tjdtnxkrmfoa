@@ -1,12 +1,19 @@
 interface Props {
   children: string;
-  size?: "base" | "lg" | "xl";
+  bold?: boolean;
+  size?: "xs" | "sm" | "base" | "lg" | "xl";
   color?: "gray-500" | "gray-300";
 }
 
-const Text = ({ children, size = "base", color }: Props) => {
+const Text = ({ children, size = "base", color, bold }: Props) => {
   return (
-    <p className={`text-${size} ${color ? `text-${color}` : ""}`}>{children}</p>
+    <p
+      className={`text-${size} ${color ? `text-${color}` : ""} ${
+        bold ? "font-bold" : ""
+      }`}
+    >
+      {children}
+    </p>
   );
 };
 
