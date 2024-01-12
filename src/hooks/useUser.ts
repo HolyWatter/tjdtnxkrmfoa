@@ -19,7 +19,7 @@ const useUser = (): User | null => {
 
   if (data == null) return null;
 
-  return data[0];
+  return data?.[0];
 };
 
 export default useUser;
