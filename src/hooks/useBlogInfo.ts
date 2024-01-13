@@ -6,6 +6,7 @@ const useBlogInfo = () => {
   return useQuery<Blog>("blogInfo", blogApi.getBlogInfo, {
     staleTime: 50000,
     refetchOnWindowFocus: false,
+    suspense: true,
   });
 };
 

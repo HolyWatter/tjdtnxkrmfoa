@@ -3,7 +3,7 @@ import { Post } from "models/post.interface";
 
 interface Props {
   title: string;
-  postList: Post[];
+  postList: Post[] | undefined;
 }
 
 const ContentsContainer = ({ title, postList }: Props) => {
@@ -11,8 +11,8 @@ const ContentsContainer = ({ title, postList }: Props) => {
     <>
       <p>{title}</p>
       <div className="flex flex-wrap justify-between w-full xs:flex-col xs:flex-nowrap">
-        {postList.length ? (
-          postList.map((post) => (
+        {postList?.length ? (
+          postList?.map((post) => (
             <div key={post.id} className="w-[48%] xs:w-full">
               <PostItemList isHome {...post} />
             </div>

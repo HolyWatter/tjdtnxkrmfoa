@@ -9,7 +9,7 @@ const Home = () => {
         description="성수의 개발 성장일지"
         image="/favicon.png"
       />
-
+      {/* <PostSkeleton /> */}
       <HomeContents />
     </>
   );

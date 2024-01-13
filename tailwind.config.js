@@ -26,6 +26,7 @@ module.exports = {
       animation: {
         slidedown: "popupOpen .5s ease-in-out",
         slideup: "popupClose .5s ease-in-out",
+        loading: "skeleton 2s ease-in-out .5s infinite",
       },
       keyframes: {
         popupOpen: {
@@ -42,6 +43,17 @@ module.exports = {
           },
           to: {
             transform: "translateY(-100%)",
+          },
+        },
+        skeleton: {
+          "0%": {
+            opacity: 1,
+          },
+          "50%": {
+            opacity: 0.4,
+          },
+          "100%": {
+            opacity: 1,
           },
         },
       },

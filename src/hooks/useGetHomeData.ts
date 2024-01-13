@@ -12,6 +12,7 @@ const useGetHomeData = () => {
   >(["homedata"], () => postApi.getHomeData(), {
     staleTime: 50000,
     refetchOnWindowFocus: false,
+    suspense: true,
   });
 };
 

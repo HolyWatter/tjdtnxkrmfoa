@@ -9,6 +9,7 @@ const useGetPostList = (cid: string | undefined) => {
     () => postApi.getPostListByCid(cid),
     {
       staleTime: 50000,
+      suspense: true,
     }
   );
 };
