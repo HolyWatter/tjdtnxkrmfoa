@@ -28,8 +28,17 @@ const CommentForm = ({ id }: Props) => {
   });
 
   const submitForm = useCallback(() => {
+    if (commentValue.username === "") {
+      return openPopup("이름을 입력해주세요.");
+    }
+    if (commentValue.password.length < 4) {
+      return openPopup("비밀번호 네자리 이상 입력해주세요.");
+    }
+    if (commentValue.comment === "") {
+      return openPopup("댓글 내용을 입력해주세요.");
+    }
     writeComment(commentValue);
-  }, [commentValue, writeComment]);
+  }, [commentValue, writeComment, openPopup]);
 
   return (
     <div className="mt-10">
