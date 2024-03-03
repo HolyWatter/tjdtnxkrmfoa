@@ -5,7 +5,7 @@ import SunEditorCore from "suneditor/src/lib/core";
 import { UploadBeforeHandler } from "suneditor-react/dist/types/upload";
 import "suneditor/dist/css/suneditor.min.css";
 import uploadImgFunction from "utils/function/uploadImg";
-import { PostCreate } from "models/post.interface";
+import { PostCreate } from "models/post";
 
 interface Props {
   setContent: React.Dispatch<React.SetStateAction<string>>;
@@ -14,7 +14,6 @@ interface Props {
 
 const Editor = ({ setContent, editValue }: Props) => {
   const editor = useRef<SunEditorCore>();
-  console.log(editValue?.content);
   useEffect(() => {
     if (!editor.current) return;
     if (editValue) {

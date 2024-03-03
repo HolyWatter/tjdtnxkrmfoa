@@ -2,7 +2,7 @@ import UnderLineInput from "components/shared/input/UnderlineInput";
 import CategoryEditModal from "components/shared/modal/component/category-edit-modal";
 import useCategory from "hooks/useCategory";
 import useInput from "hooks/useInput";
-import { PostCreate } from "models/post.interface";
+import { PostCreate } from "models/post";
 import { useState } from "react";
 import Editor from "./SunEditor";
 import { useModalContext } from "context/ModalContext";

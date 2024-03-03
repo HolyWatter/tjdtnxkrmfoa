@@ -1,4 +1,4 @@
-import { Post } from "models/post.interface";
+import { Post } from "models/post";
 
 const PinnedPost = ({ title, thumbnailUrl, createdAt }: Post) => {
   return (

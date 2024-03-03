@@ -1,5 +1,5 @@
 import axiosInstance from "apis/axios-instance";
-import { PostCreate, PostListType } from "models/post.interface";
+import { PostCreate, PostListType } from "models/post";
 
 const { REACT_APP_USER_ID } = process.env;
 

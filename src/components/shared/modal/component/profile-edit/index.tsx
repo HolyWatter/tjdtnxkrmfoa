@@ -2,7 +2,7 @@ import useBlogInfo from "hooks/useBlogInfo";
 import ProfileEditForm from "./profile-edit-form";
 import useProfileMutation from "./hooks/useProfileMutation";
 import { useSlidePopup } from "hooks/useSlidePopup";
-import { UpdateBlogInfo } from "models/blog.interface";
+import { UpdateBlogInfo } from "models/blog";
 import { useCallback } from "react";
 import { useModalContext } from "context/ModalContext";
 

@@ -1,5 +1,5 @@
 import { blogApi } from "apis/apis/blogApi";
-import { UpdateBlogInfo } from "models/blog.interface";
+import { UpdateBlogInfo } from "models/blog";
 import { useMutation, useQueryClient } from "react-query";
 
 interface Props {

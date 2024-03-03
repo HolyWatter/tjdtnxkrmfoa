@@ -1,6 +1,6 @@
 import CollectWriteEditValue from "components/shared/CollectWriteEditValue";
 import usePost from "hooks/usePost";
-import { PostCreate } from "models/post.interface";
+import { PostCreate } from "models/post";
 import { useCallback } from "react";
 
 const WritePostPage = () => {

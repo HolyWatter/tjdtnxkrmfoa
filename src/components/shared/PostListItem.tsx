@@ -1,4 +1,4 @@
-import { Post } from "models/post.interface";
+import { Post } from "models/post";
 import { Link } from "react-router-dom";
 import { changeTimeFormat } from "utils/function/changeTimeFormat";
 

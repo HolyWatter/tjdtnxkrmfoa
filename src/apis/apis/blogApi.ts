@@ -1,5 +1,5 @@
 import axiosInstance from "apis/axios-instance";
-import { UpdateBlogInfo } from "models/blog.interface";
+import { UpdateBlogInfo } from "models/blog";
 
 const { REACT_APP_USER_ID } = process.env;
 

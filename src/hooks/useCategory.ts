@@ -1,5 +1,5 @@
 import { categoryApi } from "apis/apis/categoryApi";
-import { Category } from "models/category.interface";
+import { Category } from "models/category";
 import { useQuery } from "react-query";
 
 const useCategory = () => {

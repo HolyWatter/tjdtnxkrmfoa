@@ -1,5 +1,5 @@
 import { postApi } from "apis/apis/postApi";
-import { PostCreate } from "models/post.interface";
+import { PostCreate } from "models/post";
 import { useMutation, useQueryClient } from "react-query";
 
 interface Props {

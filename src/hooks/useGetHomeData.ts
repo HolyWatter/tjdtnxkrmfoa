@@ -1,5 +1,5 @@
 import { postApi } from "apis/apis/postApi";
-import { Post } from "models/post.interface";
+import { Post } from "models/post";
 import { useQuery } from "react-query";
 
 const useGetHomeData = () => {

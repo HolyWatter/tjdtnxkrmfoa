@@ -1,6 +1,6 @@
 import { postApi } from "apis/apis/postApi";
-import { Category } from "models/category.interface";
-import { PostListType } from "models/post.interface";
+import { Category } from "models/category";
+import { PostListType } from "models/post";
 import { useQuery } from "react-query";
 
 const useGetPostList = (cid: string | undefined) => {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import InputPostValues from "../write/InputPostValues";
-import { Post, PostCreate } from "models/post.interface";
+import { Post, PostCreate } from "models/post";
 import SettingThumbnail from "components/write/SettingThumbnail";
 
 interface Props {

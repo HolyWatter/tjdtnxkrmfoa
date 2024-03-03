@@ -1,6 +1,6 @@
 import LeftIcon from "components/svg/LeftIcon";
 import RightIcon from "components/svg/RightIcon";
-import { PostCreate } from "models/post.interface";
+import { PostCreate } from "models/post";
 import { ChangeEvent, useCallback, useRef, useState } from "react";
 import uploadImgFunction from "utils/function/uploadImg";
 

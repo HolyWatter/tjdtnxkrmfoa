@@ -1,9 +1,9 @@
 import axiosInstance from "apis/axios-instance";
 import Input from "components/shared/input/DefaultInput";
+import { ACCESSTOKEN_KEY } from "const/token";
 import { useModalContext } from "context/ModalContext";
 import useInput from "hooks/useInput";
 import { useSlidePopup } from "hooks/useSlidePopup";
-import Cookies from "js-cookie";
 import { useQueryClient } from "react-query";
 
 const Login = () => {
@@ -19,9 +19,8 @@ const Login = () => {
     e.preventDefault();
     const res = await axiosInstance.post("/auth/login", loginValue);
     if (res.status === 200) {
-      Cookies.set("accessToken", res.data.accessToken);
-      Cookies.set("refreshToken", res.data.refreshToken);
       openPopup("로그인 되었습니다.");
+      localStorage.setItem(ACCESSTOKEN_KEY, res.data[ACCESSTOKEN_KEY]);
       queryClient.invalidateQueries("currentUser");
       closeModal();
     }

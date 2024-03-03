@@ -1,5 +1,5 @@
 import { blogApi } from "apis/apis/blogApi";
-import { Blog } from "models/blog.interface";
+import { Blog } from "models/blog";
 import { useQuery } from "react-query";
 
 const useBlogInfo = () => {

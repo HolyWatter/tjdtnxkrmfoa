@@ -1,7 +1,7 @@
 import CategoryModal from "components/shared/modal/component/category-modal";
 import { useModalContext } from "context/ModalContext";
 import useCategory from "hooks/useCategory";
-import { Category } from "models/category.interface";
+import { Category } from "models/category";
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
 

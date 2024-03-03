@@ -5,7 +5,6 @@ import withSuspense from "./hocs/withSuspense";
 
 const Profile = () => {
   const { data: blogInfo } = useBlogInfo();
-  console.log(2);
   return (
     <div className="flex flex-col w-full px-5 py-10 border-border border-2 rounded-md gap-5 xs:flex-row xs:p-3 xs:border-b-2 xs:border-x-0 xs:border-t-0 xs:rounded-none">
       <div className="relative xs:w-1/4 w-[220px] max-w-full m-auto">

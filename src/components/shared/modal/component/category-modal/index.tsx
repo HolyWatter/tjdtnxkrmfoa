@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Category } from "models/category.interface";
+import { Category } from "models/category";
 import { useModalContext } from "context/ModalContext";
 
 interface Props {

@@ -26,34 +26,57 @@ const Post = ({
   const user = useUser();
   const { deletePost } = usePost(id);
 
+  //목차 코드
+  // const headingList: Element[] = [];
+  // const dom = document.querySelectorAll(".contents-container h1");
+  // dom.forEach((el) => {
+  //   if (el.textContent) headingList.push(el);
+  // });
+
   return (
-    <div className="w-full">
-      <p className="text-sm">{categoryName}</p>
-      <h1 className="text-xl mt-3">{title}</h1>
-      {user && (
-        <div className="flex justify-end gap-3">
-          <Link
-            to={`/edit/${id}`}
-            className="flex items-center gap-2 px-4 py-1 border-2 rounded-md"
-          >
-            편집 <EditIcon />
-          </Link>
-          <button
-            onClick={() => deletePost(id)}
-            className="flex items-center gap-2 px-4 py-1 border-2 rounded-md"
-          >
-            삭제 <DeleteIcon />
-          </button>
+    <>
+      <div className="w-full">
+        <p className="text-sm">{categoryName}</p>
+        <h1 className="text-xl mt-3">{title}</h1>
+        {user && (
+          <div className="flex justify-end gap-3">
+            <Link
+              to={`/edit/${id}`}
+              className="flex items-center gap-2 px-4 py-1 border-2 rounded-md"
+            >
+              편집 <EditIcon />
+            </Link>
+            <button
+              onClick={() => deletePost(id)}
+              className="flex items-center gap-2 px-4 py-1 border-2 rounded-md"
+            >
+              삭제 <DeleteIcon />
+            </button>
+          </div>
+        )}
+        <div className="w-full mt-5 flex gap-2 justify-end items-end">
+          <p>{nickname}</p>·
+          <p className=" text-gray-500">{changeTimeFormat(createdAt)}</p>
         </div>
-      )}
-      <div className="w-full mt-5 flex gap-2 justify-end items-end">
-        <p>{nickname}</p>·
-        <p className=" text-gray-500">{changeTimeFormat(createdAt)}</p>
+        <div className="mt-20 px-10 xs:px-0 contents-container">
+          {HTMLReactParser(content)}
+        </div>
       </div>
-      <div className="mt-20 px-10 xs:px-0 contents-container">
-        {HTMLReactParser(content)}
-      </div>
-    </div>
+      {/* <div className="absolute top-[300px] right-10 flex flex-col border-2">
+        {headingList.map((el) => (
+          <button
+            onClick={() =>
+              el.scrollTo({
+                behavior: "smooth",
+                top: 100,
+              })
+            }
+          >
+            {el.textContent}
+          </button>
+        ))}
+      </div> */}
+    </>
   );
 };
 

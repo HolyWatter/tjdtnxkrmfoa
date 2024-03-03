@@ -1,7 +1,7 @@
 import Input from "components/shared/input/DefaultInput";
 import TextArea from "components/shared/input/DefaultTextarea";
 import { useModalContext } from "context/ModalContext";
-import { UpdateBlogInfo } from "models/blog.interface";
+import { UpdateBlogInfo } from "models/blog";
 import { useCallback, useState } from "react";
 import uploadImgFunction from "utils/function/uploadImg";
 

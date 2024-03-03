@@ -2,7 +2,7 @@ import Input from "components/shared/input/DefaultInput";
 import DeleteIcon from "components/svg/delete-icon";
 import EditIcon from "components/svg/edit-icon";
 import { useSlidePopup } from "hooks/useSlidePopup";
-import { Category } from "models/category.interface";
+import { Category } from "models/category";
 import { useState } from "react";
 import useCategoryDeleteMutation from "./hooks/useCategoryDeleteMutation";
 import useCategoryEditMutation from "./hooks/useCategoryEditMutation";

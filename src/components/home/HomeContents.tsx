@@ -5,7 +5,6 @@ import ContentsContainer from "./ContentsContainer";
 
 const HomeContents = () => {
   const { data } = useGetHomeData();
-  console.log(data);
   return (
     <div className="w-full">
       <ContentsContainer title="최근 게시글" postList={data?.lastPost} />

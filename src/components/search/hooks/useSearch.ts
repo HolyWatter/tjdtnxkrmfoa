@@ -1,5 +1,5 @@
 import { postApi } from "apis/apis/postApi";
-import { PostListType } from "models/post.interface";
+import { PostListType } from "models/post";
 import { useQuery } from "react-query";
 
 interface Props {

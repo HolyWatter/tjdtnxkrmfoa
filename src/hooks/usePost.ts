@@ -1,6 +1,6 @@
 import { postApi } from "apis/apis/postApi";
 import { useSlidePopup } from "hooks/useSlidePopup";
-import { Post, PostCreate } from "models/post.interface";
+import { Post, PostCreate } from "models/post";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
 

@@ -1,5 +1,5 @@
 import axios from "axios";
-import Cookies from "js-cookie";
+import { ACCESSTOKEN_KEY } from "const/token";
 
 const isDevelop = process.env.NODE_ENV === "development";
 
@@ -15,7 +15,7 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    const token = Cookies.get("accessToken");
+    const token = localStorage.getItem(ACCESSTOKEN_KEY);
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
@@ -23,6 +23,23 @@ axiosInstance.interceptors.request.use(
   },
   (error) => {
     return Promise.reject(error);
+  }
+);
+
+axiosInstance.interceptors.response.use(
+  (res) => {
+    return res;
+  },
+  async (error) => {
+    // const accessToken = localStorage.getItem(ACCESSTOKEN_KEY);
+    if (error?.response?.status === 401) {
+      const res = await axiosInstance.post("/auth/token");
+      localStorage.setItem(ACCESSTOKEN_KEY, res.data.accessToken);
+
+      return axiosInstance(error.config);
+    } else {
+      return Promise.reject(error);
+    }
   }
 );
 

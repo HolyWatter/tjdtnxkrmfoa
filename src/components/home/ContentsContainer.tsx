@@ -1,5 +1,5 @@
 import PostItemList from "components/shared/PostListItem";
-import { Post } from "models/post.interface";
+import { Post } from "models/post";
 
 interface Props {
   title: string;

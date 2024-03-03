@@ -2,7 +2,7 @@ import useEditPostMutation from "components/edit/hooks/useEditPostMutation";
 import CollectWriteEditValue from "components/shared/CollectWriteEditValue";
 import usePost from "hooks/usePost";
 import { useSlidePopup } from "hooks/useSlidePopup";
-import { PostCreate } from "models/post.interface";
+import { PostCreate } from "models/post";
 import { useCallback } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
