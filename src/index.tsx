@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { RecoilRoot } from "recoil";
 import "./index.css";
+import { HelmetProvider } from "react-helmet-async";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,18 +15,22 @@ const queryClient = new QueryClient();
 if ($root?.hasChildNodes()) {
   ReactDOM.hydrateRoot(
     $root,
-    <QueryClientProvider client={queryClient}>
-      <RecoilRoot>
-        <Router />
-      </RecoilRoot>
-    </QueryClientProvider>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <RecoilRoot>
+          <Router />
+        </RecoilRoot>
+      </QueryClientProvider>
+    </HelmetProvider>
   );
 } else {
   root.render(
-    <QueryClientProvider client={queryClient}>
-      <RecoilRoot>
-        <Router />
-      </RecoilRoot>
-    </QueryClientProvider>
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <RecoilRoot>
+          <Router />
+        </RecoilRoot>
+      </QueryClientProvider>
+    </HelmetProvider>
   );
 }

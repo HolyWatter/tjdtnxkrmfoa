@@ -9,30 +9,27 @@ import Post from "pages/Post";
 import PostList from "pages/PostList";
 import Search from "pages/SearchPage";
 import WritePost from "pages/WritePostPage";
-import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const Router = () => {
   return (
     <ErrorBoundary fallbackUI={<ErrorPage />}>
       <BrowserRouter>
-        <HelmetProvider>
-          <ModalContextProvider>
-            <Routes>
-              <Route element={<Layout />}>
-                <Route path="/" element={<Home />} />
-                <Route path="/post/:id" element={<Post />} />
-                <Route path="/list/:cid" element={<PostList />} />
-                <Route path="/list/" element={<PostList />} />
-                <Route path="/search" element={<Search />} />
-                <Route element={<AuthGuard />}>
-                  <Route path="/write" element={<WritePost />} />
-                  <Route path="/edit/:id" element={<EditPage />} />
-                </Route>
+        <ModalContextProvider>
+          <Routes>
+            <Route element={<Layout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/post/:id" element={<Post />} />
+              <Route path="/list/:cid" element={<PostList />} />
+              <Route path="/list/" element={<PostList />} />
+              <Route path="/search" element={<Search />} />
+              <Route element={<AuthGuard />}>
+                <Route path="/write" element={<WritePost />} />
+                <Route path="/edit/:id" element={<EditPage />} />
               </Route>
-            </Routes>
-          </ModalContextProvider>
-        </HelmetProvider>
+            </Route>
+          </Routes>
+        </ModalContextProvider>
       </BrowserRouter>
     </ErrorBoundary>
   );
