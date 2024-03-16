@@ -37,6 +37,29 @@
   overflow: auto;
 }
 
+.contents-container blockquote {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 40px;
+  margin-inline-end: 40px;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  border: solid #b1b1b1;
+  border-width: 0 0 0 5px;
+  color: #999;
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  margin-block-end: 1em;
+  margin-block-start: 1em;
+  margin-inline-end: 0;
+  margin-inline-start: 0;
+  padding: 0 5px 0 20px;
+}
+
 .dark .skeleton {
   background: linear-gradient(
     90deg,
